@@ -1,0 +1,152 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model IEnumerable<Courses_MVC.Models.Course>
+@{
+}
+<partial name="_AlertMessage" />
+<link href="~/css/Courses.css" rel="stylesheet" />
+<div>
+    <div class="courses-containner">
+        <div class="courses-header">
+            <h2>Hãy bắt đầu với khóa học đầu tiên của bạn!</h2>
+            <div class="input__group">
+                <form action="" id="form-search" class="form-inline" method="post">
+                    <input type="text" name="courestitle" class="form-control" placeholder="search">
+                    <button class="button-search" type="submit">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+        <div class="courses-body">
+            <div class="group-topic">
+                <div class="course-topic"><h2>Basic knowledge</h2></div>
+                <div class="courses-content">
+                    @foreach (var item in Model)
+                    {
+                        @if (item.Topic.topicName == "Basic knowledge")
+                        {
+                            <div class="one-course">
+                                <div class="course-image"><img src="./course-img.jpg" alt=""></div>
+                                <div class="one-course-content">
+                                    <div class="course-rate"><p>10/10</p></div>
+                                    <div class="course-title"><a href="/Lesson/LessonCourse?Id=@item.courseId">@item.courseName</a></div>
+                                    <div class="course-des more">
+                                        <p>
+                                            @item.discription
+
+                                        </p>
+                                    </div>
+                                    <button id="read-mode-btn" type="button">...Xem thêm</button>
+                                    <div class="course-price"><p>@item.originalPrice</p></div>
+                                </div>
+                            </div>
+                        }
+                    }
+                </div>
+            </div>
+            <div class="group-topic">
+                <div class="course-topic"><h2>Basic programming</h2></div>
+                <div class="courses-content">
+                    @foreach (var item in Model)
+                    {
+                        @if (item.Topic.topicName == "Basic programming")
+                        {
+                            <div class="one-course">
+                                <div class="course-image"><img src="./course-img.jpg" alt=""></div>
+                                <div class="one-course-content">
+                                    <div class="course-rate"><p>10/10</p></div>
+                                    <div class="course-title"><a href="/Courses/CoursesDetail?Id=@item.courseId">@item.courseName</a></div>
+                                    <div class="course-des"><p> @item.discription</p></div>
+                                    <div class="course-price"><p>@item.originalPrice</p></div>
+                                </div>
+                            </div>
+                        }
+                    }
+                </div>
+            </div>
+
+            <div class="group-topic">
+                <div class="course-topic"><h2>Advanced programming</h2></div>
+                <div class="courses-content">
+                    @foreach (var item in Model)
+                    {
+                        @if (item.Topic.topicName == "Advanced programming")
+                        {
+                            <div class="one-course">
+                                <div class="course-image"><img src="./course-img.jpg" alt=""></div>
+                                <div class="one-course-content">
+                                    <div class="course-rate"><p>10/10</p></div>
+                                    <div class="course-title"><a href="/Courses/CoursesDetail?Id=@item.courseId">@item.courseName</a></div>
+                                    <div class="course-des"><p> @item.discription</p></div>
+                                    <div class="course-price"><p>@item.originalPrice</p></div>
+                                </div>
+                            </div>
+                        }
+                    }
+                </div>
+            </div>
+
+            <div class="group-topic">
+                <div class="course-topic"><h2>Problem Solving</h2></div>
+                <div class="courses-content">
+                    @foreach (var item in Model)
+                    {
+                        @if (item.Topic.topicName == "Problem Solving")
+                        {
+                            <div class="one-course">
+                                <div class="course-image"><img src="./course-img.jpg" alt=""></div>
+                                <div class="one-course-content">
+                                    <div class="course-rate"><p>10/10</p></div>
+                                    <div class="course-title"><a href="/Courses/CoursesDetail?Id=@item.courseId">@item.courseName</a></div>
+                                    <div class="course-des"><p> @item.discription</p></div>
+                                    <div class="course-price"><p>@item.originalPrice</p></div>
+                                </div>
+                            </div>
+                        }
+                    }
+                </div>
+            </div>
+            <div class="group-topic">
+                <div class="course-topic"><h2>Advanced Skills</h2></div>
+                <div class="courses-content">
+                    @foreach (var item in Model)
+                    {
+                        @if (item.Topic.topicName == "Advanced Skills")
+                        {
+                            <div class="one-course">
+                                <div class="course-image"><img src="./course-img.jpg" alt=""></div>
+                                <div class="one-course-content">
+                                    <div class="course-rate"><p>10/10</p></div>
+                                    <div class="course-title"><a href="/Courses/CoursesDetail?Id=@item.courseId">@item.courseName</a></div>
+                                    <div class="course-des"><p> @item.discription</p></div>
+                                    <div class="course-price"><p>@item.originalPrice</p></div>
+                                </div>
+                            </div>
+                        }
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    
+    var moreless = document.getElementById("read-mode-btn");
+    moreless.addEventListener("click", readmore);
+    var desContainer = document.getElementById("course-des");
+    function readmore() {
+        console.log("moreless");
+        if (desContainer.style.height === '100px') {
+            moreless.innerText = "Ẩn";
+            desContainer.style.height = '100 %';
+        }
+        else {
+            moreless.innerText = "... Xem thêm";
+            desContainer.style.height = '100px';
+        }
+    }
+        
+    
+</script>

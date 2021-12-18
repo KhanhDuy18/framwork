@@ -1,0 +1,90 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model IEnumerable<Courses_MVC.Models.Lesson>
+@{
+
+
+    var listLesson = Model.ToArray();
+    if (listLesson.Length == 0)
+    {
+        <script>
+            alert("Khóa học đang phát triển");
+        </script>
+    }
+    else
+    {
+        var courseNama = listLesson[0].Course.courseName;
+        var courseDes = listLesson[0].Course.discription;
+        var coursePrice = listLesson[0].Course.price;
+        var courseTime = listLesson[0].Course.totalTime;
+        var courseCount = listLesson.Length;
+        var totalStuden = 20;
+
+
+        <link href="~/css/CourseDetail.css" rel="stylesheet" />
+        <body>
+            <div class="container col-9 container-custom">
+                <div class="course-header mt-5 ">
+                    <div class="course-header-left col-7">
+                        <h2>@courseNama</h2>
+                        <div class="course-student-values">
+                            <p>@totalStuden</p>
+                            <p class="value">8.5/10</p>
+                        </div>
+                        <div class="course-des">
+                            <p>
+                                @courseDes
+                            </p>
+                        </div>
+                    </div>
+                    <div class="course-header-right col-3">
+                        <div class="course-time">
+                            <p class="course-time-title">
+                                <i class="far fa-clock"></i>Thời gian
+                            </p>
+                            <p>@courseTime </p>
+                        </div>
+                        <div class="count-lesson">
+                            <p class="count-lesson-title">
+                                <i class="fab fa-leanpub"></i>Số bài học
+                            </p>
+                            <p>@courseCount</p>
+                        </div>
+                        <div class="course-price">
+                            <p><i class="fas fa-donate"></i>@coursePrice VNĐ</p>
+                        </div>
+                    </div>
+                    <div class="course-header-right-add-button col-2">
+                        <div class="add-car-btn">
+                            <a href=""><i class="fas fa-shopping-cart"></i> Thêm vào giỏ hàng</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="course-lesson mt-5 mb-5 pb-5">
+
+                    @foreach (var item in Model)
+                    {
+                        <div class="one-lesson">
+                            <div class="one-lesson-name">
+                                <a href="/lesson/LessonDetail?Id=@item.lessonId">@item.title</a>
+                            </div>
+                            <div class="one-lesson-des">
+                                @item.description
+                                @*Lập trình hướng đối tượng (Object-Oriented-Programming) là phương pháp lập
+                                    trình dựa trên đối tượng để tìm ra bản chất của vấn đề.*@
+                            </div>
+                            <div class="one-lesson-exer"><p><i class="fab fa-leanpub"></i> Sô lượng bài tập: @ViewBag.listExercise </p></div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </body>
+    }
+
+}
+
+
+

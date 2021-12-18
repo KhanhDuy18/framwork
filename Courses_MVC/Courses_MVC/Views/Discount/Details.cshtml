@@ -1,0 +1,39 @@
+﻿@model Courses_MVC.Models.Discount
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Discount</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.discription)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.discription)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.time)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.time)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.sale)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.sale)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.discountId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
+
+
