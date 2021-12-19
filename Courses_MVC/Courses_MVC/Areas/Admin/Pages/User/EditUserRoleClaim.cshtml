@@ -3,11 +3,11 @@
 @{
     ViewData["Title"] = "Claim của user";
 }
-<h1>@ViewData["Title"]: @Model.user.UserName</h1>
+<h1 class="text-center">@ViewData["Title"]: @Model.user.UserName</h1>
 <partial name="_StatusMessage" for="StatusMessage" />
 
 <hr />
-<div class="row">
+<div class="row mt-3 mb-lg-5 offset-4">
     <div class="col-md-6">
         <form method="post">
             <div asp-validation-summary="All" class="text-danger"></div>

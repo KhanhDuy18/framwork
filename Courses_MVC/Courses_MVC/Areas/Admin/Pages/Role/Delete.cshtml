@@ -3,11 +3,11 @@
 @{
     ViewData["Title"] = "Xóa role";
 }
-<h2>@ViewData["Title"]</h2>
+<h2 class="text-center">@ViewData["Title"]</h2>
 <partial name="_StatusMessage" model="@Model.StatusMassage" />
 
 <hr />
-<div class="row">
+<div class="row mt-3 mb-lg-5 offset-3">
     <div class="col-md-6">
         <form method="post">
             <div asp-validation-summary="All" class="text-danger"></div>

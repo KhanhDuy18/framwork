@@ -10159,11 +10159,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Project_MVC_Framework\\Courses_MVC\\Courses_MVC\\Courses_MVC.csproj",
+      "projectUniqueName": "C:\\Users\\Admin\\OneDrive - Trường ĐH CNTT - University of Information Technology\\Máy tính\\framwork.git\\Courses_MVC\\Courses_MVC\\Courses_MVC.csproj",
       "projectName": "Courses_MVC",
-      "projectPath": "D:\\Project_MVC_Framework\\Courses_MVC\\Courses_MVC\\Courses_MVC.csproj",
+      "projectPath": "C:\\Users\\Admin\\OneDrive - Trường ĐH CNTT - University of Information Technology\\Máy tính\\framwork.git\\Courses_MVC\\Courses_MVC\\Courses_MVC.csproj",
       "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "D:\\Project_MVC_Framework\\Courses_MVC\\Courses_MVC\\obj\\",
+      "outputPath": "C:\\Users\\Admin\\OneDrive - Trường ĐH CNTT - University of Information Technology\\Máy tính\\framwork.git\\Courses_MVC\\Courses_MVC\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -10291,7 +10291,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.404\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
       }
     }
   }

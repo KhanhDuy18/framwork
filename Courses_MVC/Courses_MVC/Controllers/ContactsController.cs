@@ -89,6 +89,15 @@ namespace Courses_MVC.Controllers
         }
 
 
+        public async Task<IActionResult> ThemContact()
+        {
+            //var themContact = await (from ct in _context.Contact
+            //                         select ct).Include(c => c.AppUser).ToListAsync();
+            ViewData["user"] = new SelectList(_context.Users, "Id", "UserName");
+            return View();
+
+        }
+
         // GET: Contacts/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {

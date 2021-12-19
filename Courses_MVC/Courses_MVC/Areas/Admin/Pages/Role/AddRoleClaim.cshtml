@@ -3,11 +3,11 @@
 @{
     ViewData["Title"] = "Gán đặc tính cho role";
 }
-<h2>@ViewData["Title"]: @Model.role.Name</h2>
+<h2 class="text-center">@ViewData["Title"]: @Model.role.Name</h2>
 <partial name="_StatusMessage" model="@Model.StatusMassage" />
 
 <hr />
-<div class="row">
+<div class="row mt-3 mb-lg-5 offset-4">
     <div class="col-md-6">
         <form method="post">
             <div asp-validation-summary="All" class="text-danger"></div>

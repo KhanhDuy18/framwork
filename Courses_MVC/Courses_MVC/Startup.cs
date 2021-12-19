@@ -117,7 +117,7 @@ namespace Courses_MVC
                     //Điều kiện
                     policyBuilder.RequireAuthenticatedUser(); //User phải đăng nhập
                     //policyBuilder.RequireRole("Admin"); //User có vai trò admin
-                    policyBuilder.RequireClaim("canedit", "user" );
+                    policyBuilder.RequireClaim("quanly", "user" );
                 });
 
                 options.AddPolicy("ShowAdminMenu", policyBuilder => {
