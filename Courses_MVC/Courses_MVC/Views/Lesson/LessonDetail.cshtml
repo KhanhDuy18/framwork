@@ -1,7 +1,16 @@
 ﻿
 @model Lesson
+@{
+
+    var id = Model.lessonId;
+    int idLastlesson = Convert.ToInt32(TempData["NumberofLesson"]);
+    int idmax = idLastlesson + 1;
+    var idNext = id + 1;
+    var idPre = id - 1;
+}
 <link href="~/css/LessonDetail.css" rel="stylesheet" />
 <body>
+
     <div class="container col-9 container-custom mb-5">
         <div class="lesson-title mt-4 p-4 pb-2 text-center">@Model.title</div>
         <div class="lesson-des pb-1 pt-3 p-4">
@@ -16,37 +25,47 @@
         </div>
         <div class="lesson-exercise p-4 pt-0 pb-3">
             <b> <i class="fas fa-chalkboard"></i> Bài tập</b>
-            <ol>
-                <i class="fas fa-pencil-alt"></i>
-                <a href="">Bài tâp 1</a>
-            </ol>
-            <ol>
-                <i class="fas fa-pencil-alt"></i>
-                <a href="">Bài tâp 1</a>
-            </ol>
-            <ol>
-                <i class="fas fa-pencil-alt"></i>
-                <a href="">Bài tâp 1</a>
-            </ol>
-            <ol>
-                <i class="fas fa-pencil-alt"></i>
-                <a href="">Bài tâp 1</a>
-            </ol>
+            @foreach (var item in ViewBag.listExercise)
+            {
+                <ol>
+                    <i class="fas fa-pencil-alt"></i>
+                    <a href="">Bài tâp @item.exerciseId</a>
+                </ol>
 
+            }
         </div>
         <div class="move-lesson p-4 pt-0">
-            <div class="pre-lesson">
-                <a href="button" class="pre-lesson-btn">Kế tiếp</a>
+            @{
+                if (idPre == 0)
+                {
+                    <div class="pre-lesson">
+                        <a href="/lesson/LessonDetail?Id=@idNext" class="pre-lesson-btn">Tiếp theo</a>
+                    </div>
+                }
+                else if (idNext == 3)
+                {
+                    <div class="next-lesson">
+                        <a href="/lesson/LessonDetail?Id=@idPre" class="pre-lesson-btn">Quay lại</a>
+                    </div>
+                }
+                else
+                {
+                    <div class="pre-lesson">
+                        <a href="/lesson/LessonDetail?Id=@idNext" class="pre-lesson-btn">Tiếp theo</a>
+                    </div>
+                    <div class="next-lesson">
+                        <a href="/lesson/LessonDetail?Id=@idPre" class="pre-lesson-btn">Quay lại</a>
+                    </div>
+                }
+            }
 
-            </div>
-            <div class="next-lesson">
-                <a href="button" class="pre-lesson-btn">Quay lại</a>
-            </div>
+
         </div>
     </div>
 
 
 </body>
+
 
 
 
